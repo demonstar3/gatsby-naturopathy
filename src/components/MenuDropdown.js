@@ -25,7 +25,7 @@ const MenuDropDown = ({ mobileMenuState, navLinks}) => {
           background:'rgba(255, 255, 255, 1)',
           paddingLeft:"0px",
           flexDirection: 'column',
-          justifyContent: 'space-around',
+          justifyContent: 'space-evenly',
           height: '100vh',
           width: '100vw',
           position: 'fixed',
@@ -33,13 +33,28 @@ const MenuDropDown = ({ mobileMenuState, navLinks}) => {
           left:'0',
           right:'0',
           bottom:'0',
-          overflow:'hidden',
-          textAlign: 'center',
           alignItems: 'center'
         }}
           > 
-            {navLinks}
-            <Button onClick={toggleMobileMenu}>X</Button>
+            <Flex 
+              px={3}
+              width={1}
+              sx={{
+              alignItems:"right",
+              justifyContent:"flex-end"
+            }}
+
+            >
+              <Button
+                variant="outline"
+                onClick={toggleMobileMenu}
+                sx={{border:"none"}}
+              >
+                X
+              </Button>
+            </Flex>
+            
+            {navLinks}     
           </Flex>
       )}
     </Flex>
